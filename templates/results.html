@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation Results</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #eef; }
+        table { width: 80%; margin: auto; border-collapse: collapse; background: white; }
+        th, td { padding: 10px; border: 1px solid #aaa; text-align: center; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>Results for {{ model }}</h2>
+    <table>
+        <tr>
+            <th>Activation</th>
+            <th>Accuracy (%)</th>
+            <th>Weights</th>
+            <th>Bias</th>
+        </tr>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.activation }}</td>
+            <td>{{ r.accuracy }}</td>
+            <td>{{ r.weights }}</td>
+            <td>{{ r.bias }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neural Network Simulator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Neural Network Simulator</h2>
+        <form action="/simulate" method="post" enctype="multipart/form-data">
+            <label>Upload Dataset (CSV):</label>
+            <input type="file" name="dataset" accept=".csv" required><br>
+
+            <label>Select Model:</label>
+            <select name="model" required>
+                <option value="perceptron">Perceptron</option>
+                <option value="adaline">ADALINE</option>
+                <option value="madaline">MADALINE</option>
+            </select><br>
+
+            <label>Learning Rate:</label>
+            <input type="number" name="lr" min="0.001" max="1" step="0.001" required><br>
+
+            <label>Epochs:</label>
+            <input type="number" name="epochs" min="1" required><br>
+
+            <button type="submit">Simulate</button>
+        </form>
+    </div>
+</body>
+</html>
